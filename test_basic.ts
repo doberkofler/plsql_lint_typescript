@@ -1,4 +1,4 @@
-import antlr4 from 'antlr4';
+import * as antlr4 from 'antlr4';
 import PlSqlLexer from './grammar/PlSqlLexer';
 import PlSqlParser from './grammar/PlSqlParser';
 

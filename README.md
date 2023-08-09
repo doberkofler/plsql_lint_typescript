@@ -4,12 +4,17 @@
 
 - Assuming that Python 3 is installed, we must install antlr using the `./ìnstall.sh` script.
 - Then we must download and convert the PL/SQL grammer using `./grammar.sh`
+- Install TypeScript packages using `npm i`
 
 ## Development
 
+### build
+
+`npm run build`
+
 ### test gramma
 
-./test.py
+`npm test`
 
 ### links
 

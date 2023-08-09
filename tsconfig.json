@@ -5,10 +5,9 @@
     "target": "ES6",
     "noImplicitAny": true,
     "strict": true,
-    "esModuleInterop": true,
   },
   "ts-node": {
     "esm": true,
-    "experimentalSpecifierResolution": "node"
+    "experimentalSpecifierResolution": "node",
   }
 }
