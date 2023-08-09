@@ -10,11 +10,11 @@
 
 ### build
 
-`npm run build`
+`npm run build_parser`
 
 ### test gramma
 
-`npm test`
+`npm run test_parser`
 
 ### links
 

@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "example",
   "scripts": {
-    "build": "tsc test_basic.ts",
-    "test": "node test_basic.js"
+    "test": "tsc test_basic.ts && tsc test_listener.ts && node test_basic.js && node test_listener.js",
+    "build": "tsc test_parser.ts",
+    "watch": "tsc --watch test_parser.ts"
   },
   "author": "",
   "license": "ISC",
