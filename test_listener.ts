@@ -2,6 +2,8 @@ import * as antlr4 from 'antlr4';
 import PlSqlLexer from './grammar/PlSqlLexer';
 import PlSqlParser from './grammar/PlSqlParser';
 import PlSqlParserListener from './grammar/PlSqlParserListener';
+import * as path from 'path';
+import * as fs from 'fs';
 
 class PlSqlParserListenerCustom extends PlSqlParserListener {
 	public enterEveryRule(ctx: antlr4.ParserRuleContext) {
@@ -15,15 +17,21 @@ class PlSqlParserListenerCustom extends PlSqlParserListener {
 	}
 };
 
-const input = `create or replace
-function add(a in number, b in number) return number
-is
-begin
-	return a + b;
-end;
-/ 
-`;
+const getArgument = (name: string): string | null => {
+	const find = `--${name}=`;
 
+	for (const arg of process.argv) {
+		if (arg.startsWith(find)) {
+			return arg.substring(find.length);
+		}
+	}
+
+	return null;
+};
+
+const fileName = getArgument('source') ?? 'tests/select.sql';
+console.log(`${'*'.repeat(80)}\nProcessing file "${path.basename(fileName)}"\n${'*'.repeat(80)}`);
+const input = fs.readFileSync(fileName, 'utf8');
 const chars = new antlr4.CharStream(input);
 const lexer = new PlSqlLexer(chars);
 const tokens = new antlr4.CommonTokenStream(lexer);
