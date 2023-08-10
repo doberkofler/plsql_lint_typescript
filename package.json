@@ -3,16 +3,19 @@
   "version": "0.0.1",
   "description": "example",
   "scripts": {
-    "test": "tsc test_basic.ts && tsc test_listener.ts && node test_basic.js && node test_listener.js",
-    "build": "tsc test_parser.ts",
-    "watch": "tsc --watch test_parser.ts"
+    "test_basic": "esbuild test_basic.ts --outfile=test_basic.js --platform=node --format=cjs && node test_basic.js",
+    "test_listener": "esbuild test_listener.ts --outfile=test_listener.js --platform=node --format=cjs && node test_listener.js",
+    "build": "esbuild test_parser.ts --outfile=test_parser.js --platform=node --format=cjs",
+    "watch": "esbuild test_parser.ts --outfile=test_parser.js --platform=node --format=cjs --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antlr4": "4.13.0"
+    "antlr4": "4.13.0",
+    "glob": "10.3.3"
   },
   "devDependencies": {
+    "esbuild": "0.19.0",
     "@types/node": "20.4.9",
     "typescript": "5.1.6"
   }
