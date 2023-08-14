@@ -17,8 +17,8 @@ const getArgument = (name: string): string | null => {
 };
 
 const fileName = getArgument('source') ?? 'tests/select.sql';
-console.log(`${'*'.repeat(80)}\nProcessing file "${path.basename(fileName)}"\n${'*'.repeat(80)}`);
 const input = fs.readFileSync(fileName, 'utf8');
+console.log(`${'*'.repeat(80)}\nProcessing file "${path.basename(fileName)}"\n${'*'.repeat(80)}\n${input}\n${'*'.repeat(80)}`);
 const chars = new antlr4.CharStream(input);
 const lexer = new PlSqlLexer(chars);
 const tokens = new antlr4.CommonTokenStream(lexer);

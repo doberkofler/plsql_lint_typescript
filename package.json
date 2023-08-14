@@ -5,6 +5,7 @@
   "scripts": {
     "test_basic": "esbuild test_basic.ts --outfile=test_basic.js --platform=node --format=cjs && node test_basic.js",
     "test_listener": "esbuild test_listener.ts --outfile=test_listener.js --platform=node --format=cjs && node test_listener.js",
+    "test_parser": "node test_parser.js",
     "build": "esbuild test_parser.ts --outfile=test_parser.js --platform=node --format=cjs",
     "watch": "esbuild test_parser.ts --outfile=test_parser.js --platform=node --format=cjs --watch"
   },
@@ -15,8 +16,8 @@
     "glob": "10.3.3"
   },
   "devDependencies": {
-    "esbuild": "0.19.0",
-    "@types/node": "20.4.9",
+    "esbuild": "0.19.2",
+    "@types/node": "20.5.0",
     "typescript": "5.1.6"
   }
 }

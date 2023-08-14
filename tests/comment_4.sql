@@ -1,2 +1,2 @@
 /* this is a comment */
-select * from dual:
+select * from dual;
